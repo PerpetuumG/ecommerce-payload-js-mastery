@@ -41,7 +41,7 @@ export default async function Login() {
 
           <p>Please login here</p>
 
-          <LoginForm/>
+          <LoginForm />
         </div>
       </div>
     </section>
