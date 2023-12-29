@@ -129,7 +129,7 @@ export interface Page {
         }[];
         populateBy?: ('collection' | 'selection') | null;
         relationTo?: 'products' | null;
-        categories?: (string | Category)[] | null;
+    categories?: string[] | Category[];
         limit?: number | null;
         selectedDocs?:
           | {
@@ -178,16 +178,15 @@ export interface Media {
 }
 export interface Category {
   id: string;
-  title?: string | null;
-  parent?: (string | null) | Category;
-  breadcrumbs?:
-    | {
-        doc?: (string | null) | Category;
-        url?: string | null;
-        label?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  title: string;
+  media?: string | Media;
+  parent?: string | Category;
+  breadcrumbs?: {
+    doc?: string | Category;
+    url?: string;
+    label?: string;
+    id?: string;
+  }[];
   updatedAt: string;
   createdAt: string;
 }
@@ -264,7 +263,7 @@ export interface Product {
         }[];
         populateBy?: ('collection' | 'selection') | null;
         relationTo?: 'products' | null;
-        categories?: (string | Category)[] | null;
+    categories?: string[] | Category[];
         limit?: number | null;
         selectedDocs?:
           | {
@@ -357,7 +356,7 @@ export interface Product {
             }[];
             populateBy?: ('collection' | 'selection') | null;
             relationTo?: 'products' | null;
-            categories?: (string | Category)[] | null;
+    categories?: string[] | Category[];
             limit?: number | null;
             selectedDocs?:
               | {
@@ -378,7 +377,7 @@ export interface Product {
           }
       )[]
     | null;
-  categories?: (string | Category)[] | null;
+  categories?: string[] | Category[];
   relatedProducts?: (string | Product)[] | null;
   slug?: string | null;
   skipSync?: boolean | null;
