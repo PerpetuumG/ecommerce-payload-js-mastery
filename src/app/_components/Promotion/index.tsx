@@ -1,10 +1,15 @@
 'use client';
+import React, { useEffect, useState } from 'react';
 
 import classes from './index.module.scss';
-import { useEffect, useState } from 'react';
 
 const Promotion = () => {
-  const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [time, setTime] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   const targetDate = new Date();
   targetDate.setDate(targetDate.getDate() + 3);
@@ -36,7 +41,6 @@ const Promotion = () => {
     <section className={classes.promotion}>
       <div className={classes.textBox}>
         <h3 className={classes.title}>Deals of the Month</h3>
-
         <p>
           Get ready for a shopping experience like never before with our Deals of the Month! Every
           purchase comes with exclusive perks and offers, making this month a celebration of savvy
@@ -44,10 +48,10 @@ const Promotion = () => {
         </p>
 
         <ul className={classes.stats}>
-          <StatBox label={'Days'} value={time.days} />
-          <StatBox label={'Hours'} value={time.hours} />
-          <StatBox label={'Minutes'} value={time.minutes} />
-          <StatBox label={'Seconds'} value={time.seconds} />
+          <StatBox label='Days' value={time.days} />
+          <StatBox label='Hours' value={time.hours} />
+          <StatBox label='Minutes' value={time.minutes} />
+          <StatBox label='Seconds' value={time.seconds} />
         </ul>
       </div>
     </section>
